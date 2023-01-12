@@ -1,0 +1,34 @@
+@font-face {
+    font-family: dazn;
+    src: url(../assets/fonts/DAZNOscine-Regular.ttf);
+}
+body{
+    font-family: dazn;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+}
+
+.table_league{
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+}
+
+.table_league tr{
+    border: 1px solid blue;
+    z-index: 10;
+}
+.table_league img {
+    border: 1px solid green;
+    width: 4vw;
+}
+
+.bg--green{
+    background-color: rgba(128, 255, 0, 0.5);
+}
+.bg--red{
+    background-color: rgba(158, 12, 12, 0.5);
+}
+.bg--blue{
+    background-color: rgba(0, 247, 255, 0.5);
+}
