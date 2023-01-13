@@ -130,7 +130,7 @@ export class Team {
     }
 
     get getSquad() {
-        return this._successes;
+        return this._squad;
     }
 
     set setSquad(squad) {

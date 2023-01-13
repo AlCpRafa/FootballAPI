@@ -32,3 +32,41 @@ body{
 .bg--blue{
     background-color: rgba(0, 247, 255, 0.5);
 }
+
+
+/*Pagina equipos*/
+.team_data{
+    border: 2px solid red;
+}
+.team_squad{
+    border: 2px solid blue;
+}
+.team_data__header{
+    width: 100%;
+    border: 2px solid lawngreen;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.team_data__body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.team_squad_body{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.team_squad_body article{
+    margin: 10px auto;
+    width: 10vw;
+    text-align: center;
+    border: 1px solid blue;
+}
+
+.d-none{
+    display: none;
+}

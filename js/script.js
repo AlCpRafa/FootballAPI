@@ -5,17 +5,26 @@ import { League } from "./liga.js";
 
 const main = document.querySelector("#main");
 const table_body = document.querySelector("#table_league_body")
-table_body.addEventListener("mousedown", (event)=>{
+
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': 'eb3bf246b4msh482984ea6d917b3p16488cjsn7e4ab5791fae',
+        'X-RapidAPI-Host': 'transfermarket.p.rapidapi.com'
+    }
+};
+
+table_body.addEventListener("mousedown", (event) => {
     if (event.target.nodeName === "TD") {
-        teamstable.then(equipos => {
-            let id_equipo = equipos.find(team => team.getName === event.target.parentElement.children[1].textContent).getId;
-            localStorage.setItem("id_team", id_equipo)
-        })
+        console.log(event.target.parentElement.children[0])
+        let id_equipo = event.target.parentElement.children[0].textContent;
+        localStorage.setItem("id_team", id_equipo)
+        location.assign("./pages/team.html")
     }
 })
 
-//URLs
-let id = "GB1";
+//URLs    
+let id = "ES1";
 let ligas = [{
     id: "L1",
     title: "Bundesliga",
@@ -50,13 +59,7 @@ let url_team_info = `https://transfermarket.p.rapidapi.com/clubs/get-profile?id=
 let url_team_squad = `https://transfermarket.p.rapidapi.com/clubs/get-squad?id=${id}&saison_id=2022&domain=es`;
 let url_player_info = ``;
 
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': 'eb3bf246b4msh482984ea6d917b3p16488cjsn7e4ab5791fae',
-        'X-RapidAPI-Host': 'transfermarket.p.rapidapi.com'
-    }
-};
+
 
 const loadTeamRows = () => {
     return fetch(url_league_info, options)
@@ -74,7 +77,6 @@ const showUsers = async () => {
     });
     console.log(teamstable);
     table_body.appendChild(createTable(teamstable));
-    return teamstable;
 }
 
 const createTable = (array) => {
@@ -82,9 +84,10 @@ const createTable = (array) => {
     array.forEach(team => {
         const row = document.createElement("tr");
         row.classList.add("rowTeam");
-        
 
+        const id = document.createElement("td")
         const rank = document.createElement("td")
+        id.classList.add("d-none")
         const name = document.createElement("td")
         const imagecont = document.createElement("td")
         const image = document.createElement("img")
@@ -99,6 +102,7 @@ const createTable = (array) => {
 
         checkPos(team, row)
 
+        id.textContent = team.getId
         rank.textContent = team.getRank
         name.textContent = team.getName
         image.setAttribute("src", team.getImage)
@@ -113,6 +117,7 @@ const createTable = (array) => {
 
         imagecont.appendChild(image)
 
+        row.appendChild(id)
         row.appendChild(rank)
         row.appendChild(name)
         row.appendChild(imagecont)
@@ -131,16 +136,12 @@ const createTable = (array) => {
     return fragment;
 }
 
-const teamstable = showUsers();
-// const showLeague = async () =>{
-//     await showUsers();
-//     const 
-// }
+showUsers();
 
-const checkPos = (team, row) =>  {
+const checkPos = (team, row) => {
     if (team.getColor === null) {
         row.classList.add("bg--blue")
-    } else if (team.getColor === "absteiger"){
+    } else if (team.getColor === "absteiger") {
         row.classList.add("bg--red")
     } else {
         row.classList.add("bg--green")
