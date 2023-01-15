@@ -6,20 +6,22 @@
     border-collapse: collapse;
     width: 80%;
     text-align: center;
-    background-color: rgb(23, 42, 54);
-    color: #F7FF1A;
+    background-color: rgba(209, 209, 209, 0.445);
+    color: rgb(20, 108, 190);
 }
 .table_league thead{
-    background-color: #F7FF1A;
-    color: rgb(12, 22, 28);
+    border-left: 8px solid rgb(202, 201, 201);
+    background-color: rgb(20, 108, 190);
+    color: white;
 }
-
+/* Tamanio de los escudos */
 .table_league img {
     width: 4vw;
 }
 .table_league_body tr{
-    border-top: 1px solid #F7FF1A;
+    border-top: 1px solid rgb(20, 108, 190);
 }
+/* Clases para los bordes de colores */
 .bg--champion{
     /* background-color: #e52becab; */
     border-left: 8px solid #e52becab;
@@ -39,4 +41,19 @@
 .bg--blue{
     /* background-color: rgba(0, 247, 255, 0.658); */
     border-left: 8px solid rgba(0, 247, 255, 0.658);
+}
+/* Media queries */
+/* Se eliminan algunas columnas en cada breakpoint */
+@media (max-width: 800px) {
+    .responsivetd-800{
+        display: none;
+    }
+    .table_league{
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .responsivetd-400{
+        display: none;
+    }
 }

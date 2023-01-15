@@ -2,6 +2,10 @@
     font-family: dazn;
     src: url(../assets/fonts/DAZNOscine-XBold.ttf);
 }
+@font-face {
+    font-family: daznlight;
+    src: url(../assets/fonts/DAZNOscine-Regular.ttf);
+}
 body{
     height: 100vh;
     margin: 0;
@@ -9,9 +13,9 @@ body{
     font-family: dazn;
     font-weight: bold;
     display: grid;
-    grid-template: "header" 7vw
+    grid-template: "header" 10vh
                 "main" auto
-                "footer" 10% /
+                "footer" 10vh /
                 100%;
     color: rgb(20, 108, 190);
 }
@@ -19,6 +23,7 @@ body{
 .header{
     grid-area: header;
     background-color: rgb(20, 108, 190);
+    border-bottom: 5px inset rgb(0, 61, 117);
     width: 100%;
     display: flex;
     align-items: center;
@@ -26,6 +31,7 @@ body{
 }
 .header h1{
     margin: 0 2vw;
+    font-size: 1.5rem;
 }
 .main{
     grid-area: main;
@@ -33,18 +39,40 @@ body{
     width: 100%;
     padding: 2vw;
 }
-.leagues{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
 .footer{
     grid-area: footer;
     align-self: end;
     width: 100%;
+    border-top: 5px outset rgb(0, 61, 117);
     background-color: rgb(20, 108, 190);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
-
+.footer p{
+    color: white;
+}
+.footer img{
+    height: 6vh;
+}
+.footer ul{
+    color: white;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: daznlight;
+}
+.footer li{
+    margin: 0 2vw;
+    border: 1px solid transparent;
+}
+.footer li:hover{
+    border-bottom: 1px solid white;
+    transition: all 1s;
+}
 .d-none{
     display: none;
 }

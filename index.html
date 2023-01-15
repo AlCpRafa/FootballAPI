@@ -11,13 +11,16 @@
 </head>
 
 <body>
+    <!-- Encabezado -->
     <header class="header">
         <img src="./assets/images/logo.png" alt="" class="logo">
         <h1>InfoFut</h1>
     </header>
     <main class="main" id="main">
         <h1>Selecciona tu liga favorita</h1>
-        <section class="leagues">
+        <!-- Seccion con un articulo para cada liga -->
+        <section class="leagues" id="leagues">
+            <!-- En cada articulo se encuentra el id de la liga en un p con una clase que hace que no sea visible para el ususario -->
             <article class="section">
                 <h2>Bundesliga</h2>
                 <img src="https://tmssl.akamaized.net/images/logo/normal/l1.png?lm=1525905518" alt="">
@@ -50,10 +53,19 @@
             </article>
         </section>
     </main>
+    <!-- Pie -->
     <footer class="footer">
-        hola
+        <p>© 2021 InfoFut, Inc</p>
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Contacto</li>
+                <li>Politica de Privacidad</li>
+            </ul>
+        </nav>
+        <img src="./assets/images/logo.png" alt="" class="logo">
     </footer>
-    <!-- <script src="js/script.js" type="module"></script> -->
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>
