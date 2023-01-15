@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/playerstyle.css">
+
     <title>Document</title>
 </head>
+
 <body>
     <main class="main">
-        <section class="player__info" id="player__info">
-            <h1 id="player__name" class="player__name"></h1>
-            <h2 class="player__age" id="player__age"></h2>
+        <section class="player__info section" id="player__info">
+            <section class="player__images">
+                <article class="player__card">
+                    <img src="#" alt="" id="player__foto" class="player__foto">
+                    <h1 id="player__name" class="player__name"></h1>
+                    <img src="#" alt="" id="playerc__foto" class="player__country">
+                </article>
+                <article class="player__stats">
+                    <h2 class="player__club" id="player__club"></h2>
+                    <h2 class="player__league" id="player__league"></h2>
+                    <img src="#" alt="" id="player__club__foto">
+                </article>
+            </section>
+            <article class="player__data">
+                <h2 class="player__country" id="player__country"></h2>
+                <h2 class="player__age" id="player__age"></h2>
+                <h2 class="player__height" id="player__height"></h2>
+                <h2 class="player__foot" id="player__foot"></h2>
+                <h2 class="player__position" id="player__position"></h2>
+                <h2 class="player__value" id="player__value"></h2>
+            </article>
+        </section>
+        <section class="player__gallery section">
+            <h2>Galeria</h2>
+            <article class="gal" id="player__gallery"></article>
         </section>
     </main>
     <script src="../js/jugadorscript.js" type="module"></script>
 </body>
+
 </html>

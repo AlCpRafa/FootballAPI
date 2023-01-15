@@ -1,0 +1,42 @@
+.main{
+    display: grid;
+    justify-items: center;
+}
+.table_league{
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    background-color: rgb(23, 42, 54);
+    color: #F7FF1A;
+}
+.table_league thead{
+    background-color: #F7FF1A;
+    color: rgb(12, 22, 28);
+}
+
+.table_league img {
+    width: 4vw;
+}
+.table_league_body tr{
+    border-top: 1px solid #F7FF1A;
+}
+.bg--champion{
+    /* background-color: #e52becab; */
+    border-left: 8px solid #e52becab;
+}
+.bg--green{
+    /* background-color: rgba(128, 255, 0, 0.658); */
+    border-left: 8px solid rgba(128, 255, 0, 0.658);
+}
+.bg--uefa{
+    /* background-color: #ff9900ab; */
+    border-left: 8px solid #ff9900ab;
+}
+.bg--red{
+    /* background-color: rgba(158, 12, 12, 0.658); */
+    border-left: 8px solid rgba(158, 12, 12, 0.658);
+}
+.bg--blue{
+    /* background-color: rgba(0, 247, 255, 0.658); */
+    border-left: 8px solid rgba(0, 247, 255, 0.658);
+}

@@ -3,7 +3,7 @@ import { Team } from "./equipo.js";
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'eb3bf246b4msh482984ea6d917b3p16488cjsn7e4ab5791fae',
+        'X-RapidAPI-Key': '528e70b3b6msh58f061dbf4c761ep1738bcjsnc8f004609426',
         'X-RapidAPI-Host': 'transfermarket.p.rapidapi.com'
     }
 };
@@ -20,7 +20,7 @@ const showTeam = async (urlinfo, urlsquad) => {
     console.log(team_info_resp)
     console.log(team_info_squad)
     const team = new Team(team_info_resp.mainFacts.id, team_info_resp.mainFacts.fullName,
-        team_info_resp.historicImages.slice(-1).pop(), team_info_resp.mainFacts.countryImage,
+        localStorage.getItem("team_logo"), team_info_resp.mainFacts.countryImage,
         team_info_resp.mainFacts.city, team_info_resp.mainFacts.founding,
         team_info_resp.mainFacts.members, team_info_resp.mainFacts.squadSize,
         team_info_resp.mainFacts.avgAge, team_info_resp.stadium.name,
@@ -81,6 +81,9 @@ const createTeam = (teamtest) => {
     stadium_cap.textContent = "Capacidad: " + teamtest.getStadium_capacity;
     stadium__img.setAttribute("src", teamtest.getStadium_img)
 
+    team_squad_size.textContent = "Jugadores: "+teamtest.getSquad_size
+    team_squad_age.textContent = "Edad media: "+teamtest.getAvg_age
+
     //Hay que englobar todo este codigo dentro de una funcion
     //Muestra en una lsta los titulos
     const lifrag = document.createDocumentFragment()
@@ -98,20 +101,35 @@ const createTeam = (teamtest) => {
     //Hace tarjetas con cada uno de los jugadores de la plantilla
     const squad_frag = document.createDocumentFragment()
     teamtest.getSquad.forEach(playerarr => {
+        const link = document.createElement("a")
+        link.setAttribute("href", "./player.html")
         const player = document.createElement("article")
+        const id = document.createElement("p")
         const name = document.createElement("p")
         const img = document.createElement("img")
 
+        id.textContent = playerarr.id
+        id.classList.add("d-none")
         name.textContent = playerarr.name
         img.setAttribute("src", playerarr.image)
 
-        player.appendChild(name)
-        player.appendChild(img)
-        squad_frag.appendChild(player)
+        player.append(img, name, id)
+        link.appendChild(player)
+        squad_frag.appendChild(link)
     })
 
     team_squad_body.appendChild(squad_frag)
 
 }
+
+team_squad_body.addEventListener("mousedown", (event)=>{
+    let id_player = ""
+    if (event.target.parentElement.nodeName === "A") {
+        id_player = event.target.children[2].textContent
+    } else if (event.target.parentElement.parentElement.nodeName === "A") {
+        id_player = event.target.parentElement.children[2].textContent
+    }
+    localStorage.setItem("id_player", id_player)
+})
 
 

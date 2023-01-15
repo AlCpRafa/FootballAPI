@@ -1,72 +1,54 @@
 @font-face {
     font-family: dazn;
-    src: url(../assets/fonts/DAZNOscine-Regular.ttf);
+    src: url(../assets/fonts/DAZNOscine-XBold.ttf);
 }
 body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     font-family: dazn;
     font-weight: bold;
-    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template: "header" 7vw
+                "main" auto
+                "footer" 10% /
+                100%;
+    color: rgb(20, 108, 190);
 }
 
-.table_league{
-    border-collapse: collapse;
-    width: 80%;
-    text-align: center;
-}
-
-.table_league tr{
-    border: 1px solid blue;
-    z-index: 10;
-}
-.table_league img {
-    border: 1px solid green;
-    width: 4vw;
-}
-
-.bg--green{
-    background-color: rgba(128, 255, 0, 0.5);
-}
-.bg--red{
-    background-color: rgba(158, 12, 12, 0.5);
-}
-.bg--blue{
-    background-color: rgba(0, 247, 255, 0.5);
-}
-
-
-/*Pagina equipos*/
-.team_data{
-    border: 2px solid red;
-}
-.team_squad{
-    border: 2px solid blue;
-}
-.team_data__header{
+.header{
+    grid-area: header;
+    background-color: rgb(20, 108, 190);
     width: 100%;
-    border: 2px solid lawngreen;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    color: white;
 }
-.team_data__body{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.header h1{
+    margin: 0 2vw;
 }
-
-.team_squad_body{
+.main{
+    grid-area: main;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2vw;
+}
+.leagues{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
-.team_squad_body article{
-    margin: 10px auto;
-    width: 10vw;
-    text-align: center;
-    border: 1px solid blue;
+.footer{
+    grid-area: footer;
+    align-self: end;
+    width: 100%;
+    background-color: rgb(20, 108, 190);
 }
 
 .d-none{
     display: none;
+}
+.logo{
+    height: 90%;
+    margin: 0 1vw;
 }

@@ -9,7 +9,7 @@ const table_body = document.querySelector("#table_league_body")
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'eb3bf246b4msh482984ea6d917b3p16488cjsn7e4ab5791fae',
+        'X-RapidAPI-Key': '528e70b3b6msh58f061dbf4c761ep1738bcjsnc8f004609426',
         'X-RapidAPI-Host': 'transfermarket.p.rapidapi.com'
     }
 };
@@ -18,13 +18,16 @@ table_body.addEventListener("mousedown", (event) => {
     if (event.target.nodeName === "TD") {
         console.log(event.target.parentElement.children[0])
         let id_equipo = event.target.parentElement.children[0].textContent;
+        let logo = event.target.parentElement.children[3].children[0].src
+        console.log(logo)
         localStorage.setItem("id_team", id_equipo)
-        location.assign("./pages/team.html")
+        localStorage.setItem("team_logo", logo)
+        location.assign("./team.html")
     }
 })
 
 //URLs    
-let id = "ES1";
+let id = "GB1";
 let ligas = [{
     id: "L1",
     title: "Bundesliga",
@@ -117,18 +120,7 @@ const createTable = (array) => {
 
         imagecont.appendChild(image)
 
-        row.appendChild(id)
-        row.appendChild(rank)
-        row.appendChild(name)
-        row.appendChild(imagecont)
-        row.appendChild(points)
-        row.appendChild(goals)
-        row.appendChild(goalscon)
-        row.appendChild(goalsdif)
-        row.appendChild(matches)
-        row.appendChild(win)
-        row.appendChild(loss)
-        row.appendChild(draw)
+        row.append(id, rank, name, imagecont, points, goals, goalscon, goalsdif, matches, win, loss, draw)
 
         fragment.appendChild(row)
     })
@@ -139,11 +131,15 @@ const createTable = (array) => {
 showUsers();
 
 const checkPos = (team, row) => {
-    if (team.getColor === null) {
+    if (team.getColor === null || team.getColor === "gelbpos") {
         row.classList.add("bg--blue")
-    } else if (team.getColor === "absteiger") {
-        row.classList.add("bg--red")
-    } else {
+    } else if (team.getColor === "meister") {
+        row.classList.add("bg--champion") 
+    } else if (team.getColor === "gruen" || team.getColor === "cleague" || team.getColor === "clquali") {
         row.classList.add("bg--green")
+    } else if (team.getColor === "uefa" || team.getColor === "UEFA Europa Conference League" ||  team.getColor === "UEFA Europa Conference League Qualifikation") {
+        row.classList.add("bg--uefa")
+    } else {
+        row.classList.add("bg--red")
     }
 }

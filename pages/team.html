@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/teamstyle.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
 
     </header>
     <main class="main">
-        <section id="team_data" class="team_data">
+        <section id="team_data" class="team_data section">
             <article id="team_data__header" class="team_data__header">
                 <img src="#" alt="" id="team_data__logo" class="team_data__logo">
                 <h1 id="team_data__title" class="team_data__title"></h1>
                 <h2 id="team_data__city" class="team_data__city"></h2>
-                <h3 id="team_data__founding" class="team_data__founding"></h3>
-                <h3 id="team_data__members" class="team_data__members"></h3>
+                <p id="team_data__founding" class="team_data__founding"></p>
+                <p id="team_data__members" class="team_data__members"></p>
             </article>
             <article id="team_data__body" class="team_data__body">
-                <article>
+                <article class="team_data__titulos">
                     <h3>Titulos</h3>
-                    <ul id="team_data__titulos" class="team_data__titulos"></ul>
+                    <ul id="team_data__titulos"></ul>
                 </article>
                 <article id="team_data__stadium" class="team_data__stadium">
-                    <p id="stadium__name" class="stadium__name"></p>
-                    <p id="stadium__year" class="stadium__year"></p>
-                    <p id="stadium__cap" class="stadium__cap"></p>
+                    <div class="stadium__text">
+                        <p id="stadium__name" class="stadium__name"></p>
+                        <p id="stadium__year" class="stadium__year"></p>
+                        <p id="stadium__cap" class="stadium__cap"></p>
+                    </div>
+                    <img src="#" alt="" id="stadium__img" class="stadium__img">
                 </article>
-                <img src="#" alt="" id="stadium__img" class="stadium__img">
             </article>
         </section>
-        <section id="team_squad" class="team_squad">
+        <section id="team_squad" class="team_squad section">
             <article id="team_squad_header" class="team_squad_header">
+                <h2>Plantilla</h2>
                 <h3 id="team_squad_size" class="squad_size"></h3>
                 <h3 id="team_squad_age" class="squad_age"></h3>
             </article>
@@ -45,6 +51,7 @@
     <footer>
 
     </footer>
-<script src="../js/teamscript.js" type="module"></script>
+    <script src="../js/teamscript.js" type="module"></script>
 </body>
+
 </html>

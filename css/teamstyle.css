@@ -1,0 +1,142 @@
+
+.main{
+    width: 90%;
+    display: grid;
+    grid-template: "teamdata" auto
+                   "teamsquad" auto / 
+                    100%;
+    
+                    
+}
+.section{
+    margin: 2vh auto;
+    color: rgb(20, 108, 190);
+    box-shadow: 2px 2px 10px 1px rgba(150,150,150,1);
+    box-sizing: border-box;
+    width: 100%;
+}
+/*Pagina equipos*/
+.team_data{
+    grid-area: teamdata;
+    display: grid;
+    grid-template: "dataheader databody" 100% /
+                    1fr 3fr;
+}
+.team_data__logo{
+    width: 5vw;
+}
+.team_squad{
+    grid-area: teamsquad;
+}
+.team_data__header{
+    grid-area: dataheader;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 108, 190);
+    color: white;
+}
+
+/*Estilos del encabezado donde se muestran los principales datos del equipo*/
+.team_data__header h1{
+    font-size: 1.5rem;
+    font-variant: small-caps;
+}
+
+.team_data__header h2, .team_data__header p{
+    font-size: 1.3rem;
+    font-variant: small-caps;
+}
+
+/*Estilos del cuerpo de la seccion donde se muestran los datos*/
+.team_data__body{
+    grid-area: databody;
+    display: grid;
+    grid-template: "stadium titulos" auto /
+                    2fr     1fr;
+    width: 100%;
+    
+}
+.team_data__body article{
+    text-align: center;
+}
+.team_data__body h3{
+    margin: 0;
+    font-variant: small-caps;
+    font-size: 1.5rem;
+}
+.team_data__body ul{
+    list-style: none;
+    padding-left: 0;
+}
+.team_data__body li{
+    margin: 1vh 0;
+}
+.team_data__body img{
+    margin: auto;
+}
+.team_data__titulos{
+    grid-area: titulos;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 3px solid rgb(20, 108, 190);
+    background-color: rgba(32, 50, 58, 0.651);
+    color: white;
+}
+.team_data__stadium{
+    width: 100%;
+    grid-area: stadium;
+    display: flex;
+    flex-wrap: wrap;
+}
+.team_data__stadium img{
+    width: 450px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid rgb(20, 108, 190);
+}
+.stadium__text{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.team_squad_header{
+    display: flex;
+    justify-content: space-evenly;
+}
+.team_squad_header h2, .team_squad_header h3{
+    width: fit-content;
+    margin: 3vh 0;
+}
+.team_squad_body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.team_squad_body a{
+    text-decoration: none;
+    margin: 10px auto;
+    width: 10vw;
+    min-width: 100px;
+    box-sizing: border-box;
+    height: 30vh;
+    min-height: 150px;
+    overflow: hidden;
+}
+.team_squad_body article{ 
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 3px solid rgb(20, 108, 190);
+    background-color: rgb(140, 143, 145);
+    color: rgb(20, 98, 172);
+}
+.team_squad_body p{
+    margin-bottom: 0;
+}
+

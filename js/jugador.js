@@ -1,6 +1,7 @@
 export class Player {
-    constructor(name, birth_country, country_img, age, height, foot, league, club, club_img, position, market_value, images){
+    constructor(name, player_image, birth_country, country_img, age, height, foot, league, club, club_img, position, market_value, images){
         this._name = name;
+        this._player_image = player_image
         this._birth_country = birth_country;
         this._country_img = country_img;
         this._age = age;
@@ -20,6 +21,14 @@ export class Player {
 
     set setName(name) {
         this._name = name;
+    }
+
+    get getPlayer_image() {
+        return this._player_image;
+    }
+
+    set setPlayer_image(player_image) {
+        this._player_image = player_image;
     }
 
     get getBirth_country() {
